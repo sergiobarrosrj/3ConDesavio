@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PortalRSApi</name>
+    </assembly>
+    <members>
+        <member name="M:PortalRSApi.Common.WebService.RemoveNamespaces(System.String)">
+            <summary>
+            Remove all xmlns:* instances from the passed XmlDocument to simplify our xpath expressions
+            </summary>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.UnescapeString(System.String)">
+            <summary>
+            Converts a string that has been HTML-enconded for HTTP transmission into a decoded string.
+            </summary>
+            <param name="escapedString">String to decode.</param>
+            <returns>Decoded (unescaped) string.</returns>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.AddParameter(System.String,System.String)">
+            <summary>
+            Adds a parameter to the WebMethod invocation.
+            </summary>
+            <param name="name">Name of the WebMethod parameter (case sensitive)</param>
+            <param name="value">Value to pass to the paramenter</param>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.Invoke(System.String)">
+            <summary>
+            Using the base url, invokes the WebMethod with the given name
+            </summary>
+            <param name="methodName">Web Method name</param>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.CleanLastInvoke">
+            <summary>
+            Cleans all internal data used in the last invocation, except the WebService's URL.
+            This avoids creating a new WebService object when the URL you want to use is the same.
+            </summary>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.AssertCanInvoke(System.String)">
+            <summary>
+            Checks if the WebService's URL and the WebMethod's name are valid. If not, throws ArgumentNullException.
+            </summary>
+            <param name="methodName">Web Method name (optional)</param>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.Invoke(System.String,System.Boolean)">
+            <summary>
+            Invokes a Web Method, with its parameters encoded or not.
+            </summary>
+            <param name="methodName">Name of the web method you want to call (case sensitive)</param>
+            <param name="encode">Do you want to encode your parameters? (default: true)</param>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.PreInvoke">
+            <summary>
+            This method should be called before each Invoke().
+            </summary>
+        </member>
+        <member name="M:PortalRSApi.Common.WebService.PosInvoke">
+            <summary>
+            This method should be called after each (successful or unsuccessful) Invoke().
+            </summary>
+        </member>
+        <member name="T:PortalRSApi.Data.Services.Repository`1">
+            <summary>
+            Classe de repositório genérico
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:PortalRSApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+        </member>
+    </members>
+</doc>
